@@ -51,4 +51,26 @@ public:
 
 //HashMap
 
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> numMap; // 값과 인덱스를 저장하는 해시맵
+
+        for (int i = 0; i < nums.size(); i++) {
+            int complement = target - nums[i]; // 보완값 계산
+
+            // 보완값이 맵에 있는지 확인
+            if (numMap.find(complement) != numMap.end()) {
+                return {numMap[complement], i}; // 보완값의 인덱스와 현재 인덱스를 반환
+            }
+
+            // 현재 값을 맵에 저장
+            numMap[nums[i]] = i;
+        }
+
+        return {}; // 두 수를 찾지 못한 경우(문제 조건상 발생하지 않음)
+    }
+};
+
+
 
