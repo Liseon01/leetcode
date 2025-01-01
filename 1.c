@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void){
-    printf("fick");
+    printf("flick");
 
     return 0;
 }
