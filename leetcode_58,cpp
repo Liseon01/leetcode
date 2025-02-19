@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        int i = s.size() - 1;
+        // 뒤쪽의 공백은 건너뜁니다.
+        while(i >= 0 && s[i] == ' ') {
+            i--;
+        }
+        // 공백만 있는 경우 0 반환
+        if(i < 0) return 0;
+        
+        int count = 0;
+        // 마지막 단어의 길이를 센다.
+        while(i >= 0 && s[i] != ' ') {
+            count++;
+            i--;
+        }
+        return count;
+    }
+};
